@@ -22,6 +22,12 @@ if (!is_file($configPath)) {
 
 $config = require $configPath;
 
+if (empty($config['enabled'])) {
+    http_response_code(503);
+    echo json_encode(['success' => false, 'message' => 'Kontaktforma vēl nav pieslēgta. Lūdzu, rakstiet uz info@ebtechnologies.lv vai zvaniet +371 29 179 536.']);
+    exit;
+}
+
 $field = static function (string $name): string {
     $value = $_POST[$name] ?? '';
     if (!is_string($value)) {
