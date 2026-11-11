@@ -1215,17 +1215,6 @@ h4 {
   font-size: 14px;
 }
 
-/* Prototype strip */
-
-.proto-strip {
-  padding: 7px 0;
-  border-bottom: 1px solid var(--line);
-  color: var(--muted);
-  font: 10px/1.4 var(--mono);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
 /* Responsive */
 
 @media (max-width: 960px) {
