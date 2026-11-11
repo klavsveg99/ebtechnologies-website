@@ -786,11 +786,13 @@ h4 {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
+  align-items: start;
 }
 
 .field {
   display: grid;
   gap: 7px;
+  align-content: start;
 }
 
 .field label {
@@ -809,6 +811,7 @@ h4 {
   color: var(--ink);
   font: inherit;
   font-size: 16px;
+  align-self: start;
 }
 
 .field textarea {
@@ -819,8 +822,7 @@ h4 {
 .field input[aria-invalid="true"],
 .field select[aria-invalid="true"],
 .field textarea[aria-invalid="true"] {
-  border-style: double;
-  border-width: 3px;
+  box-shadow: inset 0 0 0 2px var(--ink);
 }
 
 .field--check {
@@ -841,9 +843,15 @@ h4 {
 }
 
 .field-error {
+  grid-column: 1 / -1;
   color: var(--ink);
   font-size: 13px;
   font-weight: 700;
+  line-height: 1.4;
+}
+
+.field--check .field-error {
+  grid-column: 2 / -1;
 }
 
 .honeypot {
