@@ -1,0 +1,8 @@
+{
+  "name": "ebtechnologies-website",
+  "private": true,
+  "description": "EB Technologies wireframe prototype",
+  "require": {
+    "phpmailer/phpmailer": "^6.9"
+  }
+}
