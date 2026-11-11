@@ -948,7 +948,7 @@ h4 {
 /* Breadcrumbs */
 
 .breadcrumbs {
-  padding: 16px 0 0;
+  padding-top: 16px;
   font-size: 13px;
 }
 
