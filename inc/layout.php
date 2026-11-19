@@ -35,7 +35,6 @@ function ebt_header(string $base, string $current = ''): void
         'pakalpojumi' => ['Pakalpojumi', $base . 'pakalpojumi/'],
         'par-mums' => ['Par mums', $base . 'par-mums/'],
         'jaunumi' => ['Jaunumi', $base . 'jaunumi/'],
-        'kontakti' => ['Kontakti', $base . 'kontakti/'],
     ];
     echo '<body>' . "\n";
     echo '  <a class="skip-link" href="#content">Pāriet uz saturu</a>' . "\n\n";
