@@ -768,6 +768,114 @@ h4 {
   font-size: 15px;
 }
 
+/* Blog pagination */
+
+.pagination {
+  margin-top: 44px;
+}
+
+.pagination ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+}
+
+.pagination-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.pagination-link:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.pagination-link.is-current {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.pagination-link.is-disabled {
+  border-color: var(--soft-line);
+  color: var(--muted);
+}
+
+[aria-busy="true"] {
+  opacity: 0.55;
+}
+
+/* Single post */
+
+.keyword-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  list-style: none;
+}
+
+.keyword-list li {
+  padding: 3px 8px;
+  border: 1px solid var(--soft-line);
+  color: var(--muted);
+  font: 11px/1.4 var(--mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.post-nav-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.post-nav-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 16px;
+  border-top: 2px solid var(--line);
+  text-decoration: none;
+}
+
+.post-nav-item--next {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.post-nav-item.is-empty {
+  border-top-color: transparent;
+}
+
+.post-nav-label {
+  color: var(--muted);
+  font: 11px/1.4 var(--mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.post-nav-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.post-nav-item:hover .post-nav-title {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
 /* Forms */
 
 .contact-grid {
@@ -1334,9 +1442,15 @@ h4 {
   .grid--3,
   .grid--4,
   .news-grid,
+  .post-nav-grid,
   .stats,
   .form-row {
     grid-template-columns: 1fr;
+  }
+
+  .post-nav-item--next {
+    align-items: flex-start;
+    text-align: left;
   }
 
   .stat,

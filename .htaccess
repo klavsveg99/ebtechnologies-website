@@ -1,0 +1,9 @@
+# Pretty URLs for blog posts: /jaunumi/<slug>/ is rendered by jaunumi/post.php.
+# Everything else is served as a static file or directory index.
+
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^jaunumi/([a-z0-9-]+)/?$ jaunumi/post.php?slug=$1 [L,QSA]
