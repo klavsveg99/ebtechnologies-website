@@ -60,7 +60,7 @@ function ebt_page_load(string $name): ?DOMDocument
 function ebt_page_text_nodes(DOMDocument $dom): array
 {
     $skipTags = ['script', 'style', 'noscript', 'template', 'head', 'title', 'meta', 'link'];
-    $skipClasses = ['skip-link', 'breadcrumbs', 'site-header', 'site-footer', 'cookie-banner', 'dialog'];
+    $skipClasses = ['skip-link', 'breadcrumbs', 'site-header', 'site-footer', 'cookie-banner', 'dialog', 'no-edit'];
     $nodes = [];
     $collect = static function (DOMNode $node) use (&$collect, &$nodes, $skipTags, $skipClasses): void {
         if ($node instanceof DOMElement) {

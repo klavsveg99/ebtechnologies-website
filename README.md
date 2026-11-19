@@ -43,7 +43,8 @@ The page editor exposes each visible text node of a page's `<main>` as a field. 
 are stored in `private/data/pages.json` keyed by a hash of the original text, so they
 survive deploys and are re-applied at request time. A changed template line simply
 drops its old override. Header, footer and cookie notice are shared chrome and are not
-editable per page.
+editable per page; elements with the `no-edit` class (charts and other structural
+graphics) are skipped as well.
 
 ## Local preview
 

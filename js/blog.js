@@ -36,10 +36,7 @@
         const top = section.getBoundingClientRect().top + window.scrollY - 24;
         window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
       }
-      if (moveFocus) {
-        const heading = list.querySelector('h3 a');
-        if (heading) heading.focus({ preventScroll: true });
-      }
+      if (moveFocus) list.focus({ preventScroll: true });
     } catch (error) {
       if (error.name === 'AbortError') return;
       setStatus('Neizdevās ielādēt rakstus. Pārlādējiet lapu.', true);

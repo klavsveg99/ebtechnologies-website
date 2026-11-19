@@ -57,7 +57,7 @@ ebt_header($base, 'jaunumi');
       <div class="wrap">
         <p class="section-label">Arhīvs</p>
         <h2 class="visually-hidden" id="articles-title">Raksti</h2>
-        <div class="news-grid" id="news-list" data-page="<?= (int) $result['page'] ?>">
+        <div class="news-grid" id="news-list" tabindex="-1" data-page="<?= (int) $result['page'] ?>">
 <?= $cards ?>
         </div>
         <p class="visually-hidden" id="news-status" role="status" aria-live="polite"></p>
@@ -84,6 +84,6 @@ ebt_header($base, 'jaunumi');
 
 <?php
 ebt_footer($base);
-echo '  <script src="' . e($base) . 'js/blog.js?v=20261119-1"></script>' . "\n";
+echo '  <script src="' . e($base) . 'js/blog.js?v=20261119-2"></script>' . "\n";
 echo '</body>' . "\n";
 echo '</html>' . "\n";
