@@ -282,7 +282,7 @@ a:hover {
 
 .section-head {
   display: flex;
-  align-items: end;
+  align-items: start;
   justify-content: space-between;
   gap: 32px;
   margin-bottom: 40px;

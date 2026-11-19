@@ -40,7 +40,6 @@ $name = $field('name');
 $company = $field('company');
 $email = $field('email');
 $phone = $field('phone');
-$service = $field('service');
 $message = trim((string) ($_POST['message'] ?? ''));
 $consent = $field('consent');
 $honeypot = $field('website');
@@ -63,7 +62,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit;
 }
 
-if (mb_strlen($name) > 120 || mb_strlen($company) > 160 || mb_strlen($phone) > 40 || mb_strlen($service) > 160 || mb_strlen($message) > 5000) {
+if (mb_strlen($name) > 120 || mb_strlen($company) > 160 || mb_strlen($phone) > 40 || mb_strlen($message) > 5000) {
     http_response_code(422);
     echo json_encode(['success' => false, 'message' => 'Ziņa ir pārāk gara. Lūdzu, saīsiniet tekstu.']);
     exit;
@@ -85,8 +84,7 @@ $body = "Jauns pieteikums no ebtechnologies.lv\n\n";
 $body .= "Vārds: {$name}\n";
 $body .= "Uzņēmums: " . ($company !== '' ? $company : '-') . "\n";
 $body .= "E-pasts: {$email}\n";
-$body .= 'Tālrunis: ' . ($phone !== '' ? $phone : '-') . "\n";
-$body .= 'Pakalpojums: ' . ($service !== '' ? $service : '-') . "\n\n";
+$body .= 'Tālrunis: ' . ($phone !== '' ? $phone : '-') . "\n\n";
 $body .= "Ziņa:\n{$message}\n\n";
 $body .= "---\n";
 $body .= 'Nosūtīts no: ' . ($_SERVER['HTTP_REFERER'] ?? 'nav norādīts') . "\n";
