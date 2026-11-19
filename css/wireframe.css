@@ -351,6 +351,10 @@ a:hover {
   max-width: 520px;
 }
 
+.section-head .arrow-link {
+  justify-self: end;
+}
+
 .section-label {
   display: inline-flex;
   align-items: center;
