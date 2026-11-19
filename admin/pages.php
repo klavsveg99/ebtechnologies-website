@@ -8,6 +8,8 @@ require EBT_ROOT . '/inc/pages.php';
 
 ebt_require_login();
 ebt_admin_head('Lapas', 'pages');
+
+$urls = ebt_page_urls();
 ?>
 
     <p class="lead">Katra lapa tiek rediģēta atsevišķi. Sadaļas un izkārtojums ir fiksēti, mainīt var tekstu.</p>
@@ -17,11 +19,11 @@ ebt_admin_head('Lapas', 'pages');
         <tr><th>Lapa</th><th>Adrese</th><th></th></tr>
       </thead>
       <tbody>
-<?php foreach (ebt_pages() as $path => $label): ?>
+<?php foreach (ebt_page_names() as $name => $label): ?>
         <tr>
           <td><?= e($label) ?></td>
-          <td><a href="/<?= e($path) ?>" target="_blank" rel="noopener">/<?= e(str_replace('index.html', '', $path)) ?></a></td>
-          <td class="actions"><a class="button button--small" href="/admin/page.php?p=<?= e(rawurlencode($path)) ?>">Labot tekstu</a></td>
+          <td><a href="<?= e($urls[$name]) ?>" target="_blank" rel="noopener"><?= e($urls[$name]) ?></a></td>
+          <td class="actions"><a class="button button--small" href="/admin/page.php?p=<?= e(rawurlencode($name)) ?>">Labot tekstu</a></td>
         </tr>
 <?php endforeach; ?>
       </tbody>

@@ -4,6 +4,9 @@
 RewriteEngine On
 RewriteBase /
 
+# Includes and CLI tools are not public.
+RewriteRule ^(inc|tools)/ - [F,L]
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^jaunumi/([a-z0-9-]+)/?$ jaunumi/post.php?slug=$1 [L,QSA]

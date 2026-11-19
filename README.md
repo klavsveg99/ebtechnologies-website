@@ -5,13 +5,16 @@ Hosted on Hostinger; pushing to `master` deploys to the site root.
 
 ## Structure
 
-- `index.html`, `pakalpojumi/`, `par-mums/`, `kontakti/`, policy pages - static pages.
+- `inc/templates/*.html` - page markup, served by the matching `index.php` through
+  `inc/pages.php` so client text edits can live outside the repo.
 - `jaunumi/index.php` - blog archive with numbered pagination (AJAX-enhanced).
 - `jaunumi/post.php` - single post renderer, reached through `/jaunumi/<slug>/` (see `.htaccess`).
 - `inc/` - shared includes: layout, post store, page editor, settings, auth.
 - `admin/` - content admin at `/admin/`.
 - `private/` (outside the webroot, not in git) - `config.php`, `data/posts.json`,
-  `data/settings.json`, `admin.json` (password hash).
+  `data/settings.json`, `data/pages.json` (page text overrides), `admin.json`
+  (password hash). Deploys re-clone the repo, so nothing the client edits may live
+  in the checkout.
 
 ## Blog posts
 
@@ -36,9 +39,11 @@ Body text supports blank-line paragraphs, `## ` subheadings and `- ` list items.
 2. Sign in at `/admin/`. Sections: pages (text only, structure is fixed), posts,
    blog page copy, password.
 
-Page text is edited in place: the admin exposes each visible text node of a page's
-`<main>` as a field and writes the changed text back. Header, footer and cookie
-notice are shared chrome and stay in the templates.
+The page editor exposes each visible text node of a page's `<main>` as a field. Edits
+are stored in `private/data/pages.json` keyed by a hash of the original text, so they
+survive deploys and are re-applied at request time. A changed template line simply
+drops its old override. Header, footer and cookie notice are shared chrome and are not
+editable per page.
 
 ## Local preview
 
