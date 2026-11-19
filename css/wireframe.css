@@ -1,6 +1,14 @@
 /* EB Technologies: formal business design.
    Warm paper, hairline rules, serif display type, restrained monochrome. */
 
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/InterVariable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --paper: #f7f5f0;
   --surface: #fffefb;
@@ -11,7 +19,7 @@
   --tint: #efece4;
   --on-dark: #f7f5f0;
   --on-dark-muted: rgb(247 245 240 / 0.62);
-  --font: Helvetica, Arial, "Liberation Sans", sans-serif;
+  --font: "Inter", "Segoe UI", Helvetica, Arial, "Liberation Sans", sans-serif;
   --display: Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
   --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   --wrap: 1140px;
@@ -323,11 +331,20 @@ a:hover {
 }
 
 .section-head {
-  display: flex;
-  align-items: start;
-  justify-content: space-between;
-  gap: 40px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 520px);
+  gap: 0 40px;
+  align-items: baseline;
   margin-bottom: 48px;
+}
+
+/* The label spans both columns; the title and lead share a baseline row. */
+.section-head > div {
+  display: contents;
+}
+
+.section-head .section-label {
+  grid-column: 1 / -1;
 }
 
 .section-head .lead {
