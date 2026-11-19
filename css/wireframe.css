@@ -334,7 +334,7 @@ a:hover {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 520px);
   gap: 0 40px;
-  align-items: baseline;
+  align-items: start;
   margin-bottom: 48px;
 }
 
