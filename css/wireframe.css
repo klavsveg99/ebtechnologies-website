@@ -572,7 +572,6 @@ h4 {
   display: grid;
   grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
   gap: 64px;
-  align-items: center;
 }
 
 .hero .lead {
@@ -611,6 +610,9 @@ h4 {
 /* Hero flow */
 
 .flow {
+  position: sticky;
+  top: 102px;
+  align-self: start;
   max-width: 520px;
   padding: 30px;
   background: var(--surface);
