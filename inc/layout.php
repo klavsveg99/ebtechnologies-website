@@ -6,7 +6,7 @@ declare(strict_types=1);
 
 function ebt_head(string $title, string $description, string $base, string $canonical, string $type = 'website', string $keywords = ''): void
 {
-    $css = $base . 'css/wireframe.css?v=20261119-10';
+    $css = $base . 'css/wireframe.css?v=20261127-1';
     echo '<!DOCTYPE html>' . "\n";
     echo '<html lang="lv">' . "\n";
     echo '<head>' . "\n";
