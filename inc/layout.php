@@ -68,8 +68,6 @@ function ebt_footer(string $base): void
     echo '        <h2 class="footer-heading">Pakalpojumi</h2>' . "\n";
     echo '        <ul class="footer-list">' . "\n";
     echo '          <li><a href="' . e($base) . 'pakalpojumi/#atbalsts">Atbalsta piesaiste</a></li>' . "\n";
-    echo '          <li><a href="' . e($base) . 'pakalpojumi/#investicijas">Investīciju stratēģija</a></li>' . "\n";
-    echo '          <li><a href="' . e($base) . 'pakalpojumi/#inovacijas">Inovācijas</a></li>' . "\n";
     echo '        </ul>' . "\n";
     echo '      </div>' . "\n";
     echo '      <div>' . "\n";
